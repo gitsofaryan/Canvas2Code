@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wireframe-to-Code App
 
-## Getting Started
+This Next.js application converts wireframes into code using AI models. Users can upload a wireframe image, provide a description, and select an AI model to generate the corresponding code.
 
-First, run the development server:
+## Features
+
+-   **Wireframe Conversion:** Converts wireframe images into React code using AI.
+-   **AI Model Selection:** Allows users to select from different AI models for code generation.
+-   **Credit System:** Implements a credit system to manage code generation requests.
+-   **User Authentication:** Uses Firebase authentication for user login and signup.
+-   **Code Editor:** Integrates a code editor for viewing and editing generated code.
+-   **Responsive Design:** Provides a responsive user interface.
+
+## Technologies Used
+
+-   [Next.js](https://nextjs.org): React framework for building the application.
+-   [TypeScript](https://www.typescriptlang.org): Programming language.
+-   [Tailwind CSS](https://tailwindcss.com): CSS framework for styling.
+-   [Firebase](https://firebase.google.com): Authentication and storage.
+-   [Drizzle ORM](https://orm.drizzle.team/): Database ORM.
+-   [Neon DB](https://neon.tech/): Serverless PostgreSQL.
+-   [OpenAI](https://openai.com/): AI model integration.
+-   [@codesandbox/sandpack-react](https://sandpack.codesandbox.io/): Code editor.
+-   [Lucide React](https://lucide.dev/): Icons.
+-   [Sonner](https://sonner.emilkowal.ski/): Toast notifications.
+-   [uuid4](https://www.npmjs.com/package/uuid4): UUID generator.
+-   [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): Utility for conditional CSS classes.
+-   [clsx](https://www.npmjs.com/package/clsx): Utility for constructing className strings conditionally.
+-   [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): Utility to merge Tailwind CSS classes.
+-   [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): Animation utilities for Tailwind CSS.
+
+## Setup
+
+### Prerequisites
+
+-   Node.js (version 18 or higher)
+-   npm or yarn
+-   Firebase project
+-   Neon DB connection string
+-   OpenRouter API Key
+
+### Installation
+
+1.  Clone the repository:
+
+    ```bash
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
+
+2.  Install dependencies:
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+3.  Create a `.env` file based on [.env.example](http://_vscodecontentref_/0) and fill in the required environment variables:
+
+    ```
+    NEXT_PUBLIC_FIREBASE_API_KEY=
+    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+    NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+    NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
+    NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+    NEXT_PUBLIC_FIREBASE_APP_ID=
+    NEXT_PUBLIC_FIREBASE_MESURMENT_ID=
+    NEXT_PUBLIC_NEON_DB_CONNECTION_STRING=
+    ```
+
+### Database Setup
+
+1.  Configure the database connection in [db.tsx](http://_vscodecontentref_/1) using the Neon DB connection string.
+2.  Run the Drizzle Kit to generate the database schema:
+
+    ```bash
+    npx drizzle-kit generate:pg
+    ```
+
+### Firebase Setup
+
+1.  Initialize Firebase in [firebaseConfig.tsx](http://_vscodecontentref_/2) with your Firebase project credentials.
+2.  Enable Google Authentication in your Firebase project.
+
+### Environment Variables
+
+Ensure the following environment variables are set:
+
+-   [NEXT_PUBLIC_FIREBASE_API_KEY](http://_vscodecontentref_/3)
+-   [NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN](http://_vscodecontentref_/4)
+-   [NEXT_PUBLIC_FIREBASE_PROJECT_ID](http://_vscodecontentref_/5)
+-   [NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET](http://_vscodecontentref_/6)
+-   [NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID](http://_vscodecontentref_/7)
+-   [NEXT_PUBLIC_FIREBASE_APP_ID](http://_vscodecontentref_/8)
+-   [NEXT_PUBLIC_FIREBASE_MESURMENT_ID](http://_vscodecontentref_/9)
+-   [NEXT_PUBLIC_NEON_DB_CONNECTION_STRING](http://_vscodecontentref_/10)
+
+### Running the Application
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
