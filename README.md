@@ -1,6 +1,6 @@
-# Wireframe-to-Code App
+# Canvas2Code | (App Live)('https://wireframe-to-code-guruji.vercel.app/')
 
-This Next.js application converts wireframes into code using AI models. Users can upload a wireframe image, provide a description, and select an AI model to generate the corresponding code.
+This Next.js application converts wireframes/Canvas into code using AI models. Users can upload a wireframe image, provide a description, and select an AI model to generate the corresponding code.
 
 ## Features
 
